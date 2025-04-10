@@ -41,7 +41,7 @@
               <div class="contact-details">
                 <h5>Visit Us</h5>
                 <p class="text-muted mb-0">
-                  123 Main Street<br>
+                  everybbshop Main Street<br>
                   Gulberg III<br>
                   Lahore, Punjab<br>
                   Pakistan
