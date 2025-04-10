@@ -19,11 +19,11 @@ export default defineConfig({
         manualChunks: {
           // Split vendor dependencies into separate chunks
           'vendor': ['vue', 'vuex', 'vue-router'],
-          'ui-libs': [], // Add any UI libraries you're using
-          // Split larger application modules
-          'product-features': ['./src/views/ProductDetails.vue', './src/views/ProductList.vue'],
-          'checkout-features': ['./src/views/Cart.vue', './src/views/Checkout.vue', './src/views/Shipping.vue'],
-          'account-features': ['./src/views/Account.vue', './src/views/Login.vue']
+          'ui-libs': ['bootstrap', 'bootstrap-vue'], 
+          // Split larger application modules based on features
+          'product-features': ['./src/views/ProductDetails.vue', './src/views/Products.vue'],
+          'checkout-features': ['./src/views/Cart.vue', './src/views/Checkout.vue', './src/views/Shipping.vue', './src/views/Success.vue'],
+          'home-contact': ['./src/views/Home.vue', './src/views/Contact.vue']
         },
         // Ensure chunking strategy is optimized
         chunkFileNames: 'assets/js/[name]-[hash].js',
