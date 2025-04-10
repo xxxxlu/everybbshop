@@ -631,8 +631,8 @@ export default {
   }
   
   &:disabled {
-    background-color: lighten(#f77f00, 20%);
-    border-color: lighten(#f77f00, 20%);
+    background-color: #f77f00;
+    border-color: #f77f00;
     cursor: not-allowed;
   }
 }
