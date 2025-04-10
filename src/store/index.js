@@ -72,18 +72,36 @@ export default new Vuex.Store({
   },
   actions: {
     fetchProducts({ commit }) {
-      commit('setLoading', true)
-      // We're using local data for this example
-      // In a real app, you'd fetch from an API
-      import('@/data/products.js')
-        .then(module => {
-          commit('setProducts', module.default)
-          commit('setLoading', false)
-        })
-        .catch(error => {
-          console.error('Error loading products:', error)
-          commit('setLoading', false)
-        })
+      return new Promise((resolve, reject) => {
+        commit('setLoading', true)
+        // We're using local data for this example
+        // In a real app, you'd fetch from an API
+        
+        // 使用动态导入，但添加更完善的错误处理和图片验证
+        import('@/data/products.js')
+          .then(module => {
+            const products = module.default;
+            
+            // 验证每个产品的图片URL
+            const validatedProducts = products.map(product => {
+              // 确保图片URL有效，如果无效则使用占位图
+              if (!product.image || product.image.trim() === '') {
+                product.image = 'https://via.placeholder.com/300x200?text=Product+Image'
+              }
+              return product
+            })
+            
+            commit('setProducts', validatedProducts)
+            commit('setLoading', false)
+            console.log('成功加载产品数据，数量:', validatedProducts.length)
+            resolve(validatedProducts)
+          })
+          .catch(error => {
+            console.error('Error loading products:', error)
+            commit('setLoading', false)
+            reject(error)
+          })
+      })
     },
     addToCart({ commit }, product) {
       commit('addToCart', product)
