@@ -13,17 +13,37 @@ export default defineConfig({
     }
   },
   build: {
-    chunkSizeWarningLimit: 800, // Increase from default 500kb to 800kb
+    chunkSizeWarningLimit: 1100, // Increased limit to avoid warnings for large Bootstrap libraries
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Split vendor dependencies into separate chunks
-          'vendor': ['vue', 'vuex', 'vue-router'],
-          'ui-libs': ['bootstrap', 'bootstrap-vue'], 
-          // Split larger application modules based on features
-          'product-features': ['./src/views/ProductDetails.vue', './src/views/Products.vue'],
-          'checkout-features': ['./src/views/Cart.vue', './src/views/Checkout.vue', './src/views/Shipping.vue', './src/views/Success.vue'],
-          'home-contact': ['./src/views/Home.vue', './src/views/Contact.vue']
+        manualChunks: (id) => {
+          // Core libraries
+          if (id.includes('node_modules/vue/') || id.includes('node_modules/vuex/') || id.includes('node_modules/vue-router/')) {
+            return 'vendor-core';
+          }
+          
+          // Bootstrap and related libraries
+          if (id.includes('node_modules/bootstrap/')) {
+            return 'ui-bootstrap';
+          }
+          if (id.includes('node_modules/bootstrap-vue/')) {
+            return 'ui-bootstrap-vue';
+          }
+          if (id.includes('node_modules/@popperjs/')) {
+            return 'ui-popper';
+          }
+          
+          // Application features based on views
+          if (id.includes('/src/views/ProductDetails.vue') || id.includes('/src/views/Products.vue')) {
+            return 'product-features';
+          }
+          if (id.includes('/src/views/Cart.vue') || id.includes('/src/views/Checkout.vue') || 
+              id.includes('/src/views/Shipping.vue') || id.includes('/src/views/Success.vue')) {
+            return 'checkout-features';
+          }
+          if (id.includes('/src/views/Home.vue') || id.includes('/src/views/Contact.vue')) {
+            return 'home-contact';
+          }
         },
         // Ensure chunking strategy is optimized
         chunkFileNames: 'assets/js/[name]-[hash].js',
