@@ -13,7 +13,7 @@ export default [
     id: 2,
     name: "Strawberries, 1 Lb",
     price: 349,
-    image: "https://m.media-amazon.com/images/I/61BK5x+-qtL._AC_UL640_FMwebp_QL65_.jpg",
+    image: "https://m.media-amazon.com/images/I/611NvMOHT1L._AC_UL640_FMwebp_QL65_.jpg",
     category: "fresh Produce",
     description: "Recommended to wash before consuming.",
     stock: 45
