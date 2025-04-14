@@ -80,10 +80,6 @@
             <div class="col-md-3 footer-col">
               <h5 class="footer-heading">Contact Us</h5>
               <div class="contact-item">
-                <b-icon icon="geo-alt" class="contact-icon"></b-icon>
-                <span>everybbshop Food Street, Karachi, Pakistan</span>
-              </div>
-              <div class="contact-item">
                 <b-icon icon="envelope" class="contact-icon"></b-icon>
                 <span>everybbshop@everybbshop.fun</span>
               </div>
@@ -99,7 +95,7 @@
           </div>
         </div>
         <div class="footer-bottom text-center text-teal-dark mt-4 pt-4 border-top">
-          <p class="mb-0">&copy; Copyright © {{ new Date().getFullYear() }} | Powered by Data Network Solutions (SMC-Private) Limited.</p>
+          <p class="mb-0">Copyright © {{ new Date().getFullYear() }} everybbshop Store. Powered by VertexFlow SMC Technologies Pvt Ltd</p>
           <div class="payment-icons mt-2">
             <img src="./assets/easypaisa.png" alt="Easypaisa" height="30">
             <img src="./assets/jazzcash.png" alt="JazzCash" height="30">

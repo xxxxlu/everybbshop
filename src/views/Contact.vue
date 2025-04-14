@@ -36,21 +36,6 @@
 
             <div class="contact-method d-flex align-items-start mb-4">
               <div class="contact-icon mr-3">
-                <b-icon icon="geo-alt" font-scale="1.5"></b-icon>
-              </div>
-              <div class="contact-details">
-                <h5>Visit Us</h5>
-                <p class="text-muted mb-0">
-                  everybbshop Main Street<br>
-                  Gulberg III<br>
-                  Lahore, Punjab<br>
-                  Pakistan
-                </p>
-              </div>
-            </div>
-
-            <div class="contact-method d-flex align-items-start mb-4">
-              <div class="contact-icon mr-3">
                 <b-icon icon="envelope" font-scale="1.5"></b-icon>
               </div>
               <div class="contact-details">
@@ -173,7 +158,7 @@
     </b-container>
 
     <!-- Map Section -->
-    <div class="map-section py-5">
+    <!-- <div class="map-section py-5">
       <b-container>
         <div class="section-header text-center">
           <h2 class="section-title">Find Us</h2>
@@ -191,7 +176,7 @@
           </iframe>
         </div>
       </b-container>
-    </div>
+    </div> -->
   </div>
 </template>
 
