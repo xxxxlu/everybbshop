@@ -58,7 +58,7 @@
       <div class="row">
         <div class="col-md-6 text-center text-md-left">
           <p class="mb-0">
-            Copyright © {{ new Date().getFullYear() }} everybbshop Store. Powered by VertexFlow SMC Technologies Pvt Ltd
+            Copyright © {{ new Date().getFullYear() }} everybbshop Store. Powered by SECONDSYS SOLUTIONS (SMC-PRIVATE) LIMITED
           </p>
         </div>
         <div class="col-md-6 text-center text-md-right">
