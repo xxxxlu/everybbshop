@@ -95,7 +95,7 @@
           </div>
         </div>
         <div class="footer-bottom text-center text-teal-dark mt-4 pt-4 border-top">
-          <p class="mb-0">Copyright © {{ new Date().getFullYear() }} everybbshop Store. Powered by VertexFlow SMC Technologies Pvt Ltd</p>
+          <p class="mb-0">Copyright © {{ new Date().getFullYear() }} everybbshop Store. Powered by SECONDSYS SOLUTIONS (SMC-PRIVATE) LIMITED</p>
           <div class="payment-icons mt-2">
             <img src="./assets/easypaisa.png" alt="Easypaisa" height="30">
             <img src="./assets/jazzcash.png" alt="JazzCash" height="30">
